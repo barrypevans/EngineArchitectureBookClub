@@ -1,15 +1,13 @@
 #pragma once
-
-#include "../engine-subsystem.h"
 #include "stack-allocator.h"
 
-class MemoryManager : public EngineSubsystem
+class MemoryManager
 {
 public :
-	// Inherited via EngineSubsystem
-	virtual void Init() override;
-	virtual void Update() override;
-	virtual void ShutDown() override;
+	
+	void Init();
+	void Update();
+	void ShutDown();
 
 	StackAllocator* GetSystemAllocator() { return &m_systemAllocator; }
 

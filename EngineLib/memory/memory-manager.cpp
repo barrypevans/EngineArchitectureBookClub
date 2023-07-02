@@ -1,10 +1,11 @@
 #include "memory-manager.h"
+#include "memory-utils.h"
 
 MemoryManager g_memoryManager;
 
 void MemoryManager::Init()
 {
-	m_systemAllocator.Init(10000000000); // 10 gb of system memory
+	m_systemAllocator.Init(GiB(8)); // 10 gb of system memory
 }
 
 void MemoryManager::Update()

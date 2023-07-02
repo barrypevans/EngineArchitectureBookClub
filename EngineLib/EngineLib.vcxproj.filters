@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="engine-subsystem.h" />
     <ClInclude Include="memory\memory-manager.h">
       <Filter>memory</Filter>
     </ClInclude>
     <ClInclude Include="memory\stack-allocator.h">
+      <Filter>memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\memory-utils.h">
       <Filter>memory</Filter>
     </ClInclude>
   </ItemGroup>
@@ -19,6 +21,9 @@
       <Filter>memory</Filter>
     </ClCompile>
     <ClCompile Include="memory\stack-allocator.cpp">
+      <Filter>memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\memory-utils.cpp">
       <Filter>memory</Filter>
     </ClCompile>
   </ItemGroup>

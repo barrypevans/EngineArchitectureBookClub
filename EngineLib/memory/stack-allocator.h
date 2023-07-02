@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include "memory-utils.h"
 
 class StackAllocator
 {
@@ -8,7 +9,7 @@ public:
 	~StackAllocator();
 	void Init(size_t stackSize);
 	void Shutdown();
-	void* Alloc(size_t bytes);
+	void* Alloc(size_t bytes, Alignment alignment = kAlign_4byte);
 	void FreeLastBlock();
 
 	size_t GetCurStackSize();

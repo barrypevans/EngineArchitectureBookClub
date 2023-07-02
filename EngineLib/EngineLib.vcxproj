@@ -11,12 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="engine-subsystem.h" />
     <ClInclude Include="memory\memory-manager.h" />
+    <ClInclude Include="memory\memory-utils.h" />
     <ClInclude Include="memory\stack-allocator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="memory\memory-manager.cpp" />
+    <ClCompile Include="memory\memory-utils.cpp" />
     <ClCompile Include="memory\stack-allocator.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

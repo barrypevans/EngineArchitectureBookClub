@@ -29,14 +29,19 @@ void StackAllocator::Shutdown()
 #endif
 }
 
-void* StackAllocator::Alloc(size_t bytes)
+void* StackAllocator::Alloc(size_t bytes, Alignment alignment)
 {
 	if (GetCurrentMarker() + bytes >= m_maxStackSize) // Out of memory
 		return nullptr;
 
 	size_t lastMarker = GetCurrentMarker();
+	size_t nextMarker = lastMarker + bytes;
 
-	m_markerList[m_curMarkerIndex] = lastMarker + bytes;
+	// get aligned next marker
+	char* pAlignedAddr = AlignPtr<char>(m_pMemory + nextMarker, alignment);
+	nextMarker = (pAlignedAddr - m_pMemory);
+
+	m_markerList[m_curMarkerIndex] = nextMarker;
 	m_curMarkerIndex++;
 
 	return m_pMemory + GetCurrentMarker();
